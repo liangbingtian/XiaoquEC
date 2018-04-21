@@ -20,6 +20,18 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':latte-core')
     implementation project(':latte-ec')
     annotationProcessor project(':latte-compiler')
+
+    //图标
+    implementation 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
+    implementation 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
+
+    //Fragment依赖
+    implementation 'me.yokeyword:fragmentation:1.0.3'
+    implementation 'me.yokeyword:fragmentation-swipeback:1.0.3'
 }

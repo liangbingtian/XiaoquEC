@@ -9,7 +9,6 @@ import com.example.latte.net.callback.ISuccess;
 import com.example.latte.ui.LoaderStyle;
 
 import java.io.File;
-import java.io.ObjectStreamException;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -24,7 +23,7 @@ public class RestClientBuilder {
 
     private String mUrl;
     private static final Map<String, Object> PARAMS = RestCreator.getParams();
-    private IRequest mIrequest;
+    private IRequest mIRequest;
     private ISuccess mSuccess;
     private IFailure mFailure;
     private RequestBody mBody;
@@ -91,7 +90,7 @@ public class RestClientBuilder {
     }
 
     public final RestClientBuilder request(IRequest iRequest) {
-        this.mIrequest = iRequest;
+        this.mIRequest = iRequest;
         return this;
     }
 
@@ -108,6 +107,6 @@ public class RestClientBuilder {
     }
 
     public final RestClient build() {
-        return new RestClient(mUrl, PARAMS, mIrequest, mSuccess, mFailure, mBody, mError, mLoaderStyle, mContext, mFile, mDownloadDir, mExtension, mName);
+        return new RestClient(mUrl, PARAMS, mIRequest, mSuccess, mFailure, mBody, mError, mLoaderStyle, mContext, mFile, mDownloadDir, mExtension, mName);
     }
 }
